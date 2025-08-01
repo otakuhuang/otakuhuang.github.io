@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="flex items-center space-x-3">
           <UAvatar
-            src="/images/avatar.jpg"
+            src="/images/icon.png"
             alt="Otakuhuang"
             size="sm"
           />
