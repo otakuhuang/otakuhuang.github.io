@@ -32,7 +32,7 @@
                   </div>
                   <div class="ml-4">
                     <h3 class="text-lg font-medium text-gray-900">邮箱</h3>
-                    <p class="mt-1 text-gray-600">otakuhuang@example.com</p>
+                    <p class="mt-1 text-gray-600">{{ author.social.email }}</p>
                   </div>
                 </div>
                 
@@ -108,17 +108,16 @@
 </template>
 
 <script setup lang="ts">
-// 获取作者数据
-const { author } = useContent();
+const { author } = useAppConfig();
 
 // SEO 设置
 useSeoMeta({
   title: '联系我 - otakuhuang',
-  description: '通过邮箱或社交媒体联系 otakuhuang，欢迎交流前端开发、Vue.js、Nuxt.js 等技术话题。',
+  description: '通过邮箱或社交媒体联系 otakuhuang, 欢迎交流前端开发、Vue.js、Nuxt.js 等技术话题。',
   keywords: '联系, 联系方式, 社交媒体, 邮箱, Vue.js, Nuxt.js',
   author: 'otakuhuang',
   ogTitle: '联系我 - otakuhuang',
-  ogDescription: '通过邮箱或社交媒体联系 otakuhuang，欢迎交流前端开发、Vue.js、Nuxt.js 等技术话题。',
+  ogDescription: '通过邮箱或社交媒体联系 otakuhuang, 欢迎交流前端开发、Vue.js、Nuxt.js 等技术话题。',
   twitterCard: 'summary_large_image',
 });
 
