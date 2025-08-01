@@ -30,7 +30,7 @@ const contents: BlogContent[] = [
     tags: ['前端', 'Vue.js', 'TypeScript'],
     readTime: 5,
     featured: true,
-    coverImage: '/images/blog-1.jpg',
+    coverImage: 'https://picsum.photos/350/200',
   },
   {
     id: '2',
