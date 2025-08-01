@@ -7,7 +7,7 @@
     <FeaturedPosts :featured-contents="featuredContents" />
 
     <!-- About Section -->
-    <AboutSection :author="author" />
+    <AboutSection />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import FeaturedPosts from '~/components/home/FeaturedPosts.vue'
 import AboutSection from '~/components/home/AboutSection.vue'
 
 // 获取内容数据
-const { featuredContents, author, stats } = useContent()
+const { featuredContents, stats } = useContent()
 
 // SEO 设置
 useSeoMeta({
