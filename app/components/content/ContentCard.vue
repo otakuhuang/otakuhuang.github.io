@@ -5,11 +5,11 @@
       v-if="content.coverImage"
       class="aspect-video overflow-hidden"
     >
-      <img
+      <NuxtImg
         :src="content.coverImage"
         :alt="content.title"
         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-      >
+      />
     </div>
 
     <!-- Content -->
