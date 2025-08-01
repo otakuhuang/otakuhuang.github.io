@@ -5,8 +5,8 @@
         <!-- Avatar and Name -->
         <div class="flex justify-center mb-8">
           <UAvatar
-            :src="config.author.avatar"
-            alt="Otakuhuang"
+            :src="author.avatar"
+            :alt="author.name"
             size="xl"
             class="ring-4 ring-white shadow-lg"
           />
@@ -15,11 +15,10 @@
         <!-- Welcome Message -->
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           欢迎来到我的
-          <span class="text-blue-600">技术博客</span>
+          <span class="text-blue-600">内容中心</span>
         </h1>
         <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-          分享前端开发、TypeScript、Vue.js 等领域的技术见解和学习心得。
-          在这里，我们一起探索现代前端技术的奥秘。
+          {{ site.description }}
         </p>
 
         <!-- CTA Buttons -->
@@ -72,7 +71,7 @@
 <script setup lang="ts">
 import type { BlogStats } from '~/types/blog';
 
-const config = useAppConfig();
+const { site, author } = useAppConfig();
 
 interface Props {
   stats: BlogStats

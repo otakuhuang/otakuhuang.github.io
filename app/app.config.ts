@@ -1,7 +1,7 @@
 export default defineAppConfig({
   site: {
     name: 'otakuhuang 内容站',
-    description: '一个基于 Nuxt4 + TypeScript 的内容静态站点',
+    description: '分享前端开发、TypeScript、Vue.js 等领域的技术见解和学习心得。在这里，我们一起探索现代前端技术的奥秘。',
     url: '',
     language: 'zh-CN',
     keywords: ['前端', '内容站', 'Nuxt4', 'TypeScript', '博客'],
