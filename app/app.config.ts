@@ -5,6 +5,7 @@ export default defineAppConfig({
     url: '',
     language: 'zh-CN',
     keywords: ['前端', '内容站', 'Nuxt4', 'TypeScript', '博客'],
+    icon: '/images/icon.png',
   },
   author: {
     name: 'otakuhuang',

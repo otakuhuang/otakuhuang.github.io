@@ -6,7 +6,7 @@
         <div>
           <div class="flex items-center space-x-3 mb-4">
             <UAvatar
-              src="/images/avatar.jpg"
+              :src="config.site.icon"
               alt="Otakuhuang"
               size="sm"
             />
@@ -80,6 +80,7 @@
               to="https://twitter.com/otakuhuang"
               target="_blank"
               aria-label="Twitter"
+              hidden
             />
             <UButton
               icon="i-simple-icons-linkedin"
@@ -89,6 +90,7 @@
               to="https://linkedin.com/in/otakuhuang"
               target="_blank"
               aria-label="LinkedIn"
+              hidden
             />
           </div>
         </div>
@@ -103,3 +105,7 @@
     </div>
   </footer>
 </template> 
+
+<script setup lang="ts">
+const config = useAppConfig();
+</script>
