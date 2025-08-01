@@ -5,9 +5,6 @@
 
     <!-- Featured Contents -->
     <FeaturedPosts :featured-contents="featuredContents" />
-
-    <!-- About Section -->
-    <AboutSection />
   </div>
 </template>
 
@@ -15,7 +12,6 @@
 // 导入组件
 import HeroSection from '~/components/home/HeroSection.vue'
 import FeaturedPosts from '~/components/home/FeaturedPosts.vue'
-import AboutSection from '~/components/home/AboutSection.vue'
 
 // 获取内容数据
 const { featuredContents, stats } = useContent()
