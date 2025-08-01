@@ -31,15 +31,6 @@
           >
             浏览文章
           </UButton>
-          <UButton
-            to="/about"
-            color="primary"
-            variant="ghost"
-            size="lg"
-            class="font-medium"
-          >
-            了解更多
-          </UButton>
         </div>
 
         <!-- Stats -->
