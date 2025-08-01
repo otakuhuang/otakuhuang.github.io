@@ -6,7 +6,7 @@
         :src="content.coverImage"
         :alt="content.title"
         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-      />
+      >
     </div>
 
     <!-- Content -->
@@ -65,21 +65,21 @@
 </template>
 
 <script setup lang="ts">
-import type { BlogContent } from '~/types/blog'
+import type { BlogContent } from '~/types/blog';
 
 interface Props {
   content: BlogContent
 }
 
-defineProps<Props>()
+defineProps<Props>();
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('zh-CN', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
-  })
-}
+    day: 'numeric',
+  });
+};
 </script>
 
 <style scoped>

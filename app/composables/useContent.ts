@@ -1,4 +1,4 @@
-import type { BlogContent, Author, BlogStats } from '~/types/blog'
+import type { BlogContent, Author, BlogStats } from '~/types/blog';
 
 // 静态作者信息
 const author: Author = {
@@ -7,16 +7,16 @@ const author: Author = {
   bio: '前端开发工程师，热爱技术分享，专注于 Vue.js、TypeScript 和现代前端技术栈。',
   social: {
     github: 'https://github.com/otakuhuang',
-    twitter: 'https://twitter.com/otakuhuang'
-  }
-}
+    twitter: 'https://twitter.com/otakuhuang',
+  },
+};
 
 // 静态统计数据
 const stats: BlogStats = {
   totalContents: 4,
   totalViews: 1234,
-  totalLikes: 89
-}
+  totalLikes: 89,
+};
 
 // 模拟从 markdown 文件读取的内容数据
 const contents: BlogContent[] = [
@@ -30,7 +30,7 @@ const contents: BlogContent[] = [
     tags: ['前端', 'Vue.js', 'TypeScript'],
     readTime: 5,
     featured: true,
-    coverImage: '/images/blog-1.jpg'
+    coverImage: '/images/blog-1.jpg',
   },
   {
     id: '2',
@@ -41,7 +41,7 @@ const contents: BlogContent[] = [
     publishedAt: '2024-01-10',
     tags: ['Nuxt', 'TypeScript', '最佳实践'],
     readTime: 8,
-    featured: true
+    featured: true,
   },
   {
     id: '3',
@@ -51,7 +51,7 @@ const contents: BlogContent[] = [
     author: 'otakuhuang',
     publishedAt: '2024-01-05',
     tags: ['CSS', '前端', '布局'],
-    readTime: 6
+    readTime: 6,
   },
   {
     id: '4',
@@ -61,21 +61,21 @@ const contents: BlogContent[] = [
     author: 'otakuhuang',
     publishedAt: '2024-01-01',
     tags: ['Vue.js', 'Composition API', '前端'],
-    readTime: 10
-  }
-]
+    readTime: 10,
+  },
+];
 
 // 内容服务 - 直接返回数据，避免函数序列化问题
 export const useContent = () => {
-  const featuredContents = contents.filter(content => content.featured)
-  const recentContents = contents.slice(0, 3)
-  const allContents = contents
+  const featuredContents = contents.filter(content => content.featured);
+  const recentContents = contents.slice(0, 3);
+  const allContents = contents;
 
   return {
     featuredContents,
     recentContents,
     allContents,
     author,
-    stats
-  }
-} 
+    stats,
+  };
+}; 

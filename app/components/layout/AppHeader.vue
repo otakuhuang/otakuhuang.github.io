@@ -102,5 +102,5 @@
 </template>
 
 <script setup lang="ts">
-const isMobileMenuOpen = ref(false)
+const isMobileMenuOpen = ref(false);
 </script> 

@@ -41,16 +41,16 @@
 
 <script setup lang="ts">
 // 导入组件
-import ContentCard from '~/components/content/ContentCard.vue'
+import ContentCard from '~/components/content/ContentCard.vue';
 
 // 获取静态内容数据
-const { allContents, stats } = useContent()
+const { allContents, stats } = useContent();
 
 // SEO 设置
 useSeoMeta({
   title: '所有文章 - otakuhuang',
   description: '浏览所有技术文章，涵盖前端开发、TypeScript、Vue.js 等领域。',
   keywords: '前端开发, TypeScript, Vue.js, Nuxt.js, 技术文章',
-  author: 'otakuhuang'
-})
+  author: 'otakuhuang',
+});
 </script> 

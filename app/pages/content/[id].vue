@@ -52,7 +52,7 @@
           :src="content.coverImage"
           :alt="content.title"
           class="w-full h-64 object-cover rounded-lg"
-        />
+        >
       </div>
 
       <!-- Excerpt -->
@@ -121,7 +121,7 @@
             <UIcon name="i-heroicons-arrow-left" class="w-4 h-4" />
             <span>{{ prevContent.title }}</span>
           </NuxtLink>
-          <div v-else></div>
+          <div v-else/>
 
           <NuxtLink
             v-if="nextContent"
@@ -131,7 +131,7 @@
             <span>{{ nextContent.title }}</span>
             <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
           </NuxtLink>
-          <div v-else></div>
+          <div v-else/>
         </div>
       </nav>
     </div>
@@ -157,28 +157,28 @@
 // import type { BlogPost } from '~/types/blog'
 
 // 获取路由参数
-const route = useRoute()
-const contentId = route.params.id as string
+const route = useRoute();
+const contentId = route.params.id as string;
 
 // 获取内容数据
-const { allContents } = useContent()
+const { allContents } = useContent();
 
 // 获取当前文章和所有文章
-const content = allContents.find(c => c.id === contentId)
+const content = allContents.find(c => c.id === contentId);
 
 // 计算上一篇和下一篇文章
-const currentIndex = allContents.findIndex(c => c.id === contentId)
-const prevContent = currentIndex > 0 ? allContents[currentIndex - 1] : null
-const nextContent = currentIndex < allContents.length - 1 ? allContents[currentIndex + 1] : null
+const currentIndex = allContents.findIndex(c => c.id === contentId);
+const prevContent = currentIndex > 0 ? allContents[currentIndex - 1] : null;
+const nextContent = currentIndex < allContents.length - 1 ? allContents[currentIndex + 1] : null;
 
 // 格式化日期
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('zh-CN', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
-  })
-}
+    day: 'numeric',
+  });
+};
 
 // SEO 设置
 useSeoMeta({
@@ -188,6 +188,6 @@ useSeoMeta({
   author: 'otakuhuang',
   ogTitle: content ? content.title : '内容未找到',
   ogDescription: content ? content.excerpt : '抱歉，您访问的内容不存在。',
-  ogImage: content?.coverImage || '/images/og-image.jpg'
-})
+  ogImage: content?.coverImage || '/images/og-image.jpg',
+});
 </script> 

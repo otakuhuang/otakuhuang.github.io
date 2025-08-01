@@ -103,7 +103,7 @@
 
 <script setup lang="ts">
 // 获取作者数据
-const { author } = useContent()
+const { author } = useContent();
 
 // SEO 设置
 useSeoMeta({
@@ -113,11 +113,11 @@ useSeoMeta({
   author: 'otakuhuang',
   ogTitle: '联系我 - otakuhuang',
   ogDescription: '通过邮箱或社交媒体联系 otakuhuang，欢迎交流前端开发、Vue.js、Nuxt.js 等技术话题。',
-  twitterCard: 'summary_large_image'
-})
+  twitterCard: 'summary_large_image',
+});
 
 // 页面配置
 definePageMeta({
-  title: '联系'
-})
+  title: '联系',
+});
 </script>

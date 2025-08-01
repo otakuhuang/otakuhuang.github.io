@@ -70,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BlogStats } from '~/types/blog'
+import type { BlogStats } from '~/types/blog';
 
 const config = useAppConfig();
 
@@ -78,5 +78,5 @@ interface Props {
   stats: BlogStats
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script> 

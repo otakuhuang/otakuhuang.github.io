@@ -10,11 +10,11 @@
 
 <script setup lang="ts">
 // 导入组件
-import HeroSection from '~/components/home/HeroSection.vue'
-import FeaturedPosts from '~/components/home/FeaturedPosts.vue'
+import HeroSection from '~/components/home/HeroSection.vue';
+import FeaturedPosts from '~/components/home/FeaturedPosts.vue';
 
 // 获取内容数据
-const { featuredContents, stats } = useContent()
+const { featuredContents, stats } = useContent();
 
 // SEO 设置
 useSeoMeta({
@@ -25,6 +25,6 @@ useSeoMeta({
   ogTitle: 'otakuhuang - 内容站',
   ogDescription: '分享前端开发、TypeScript、Vue.js 等领域的技术见解和学习心得。',
   // ogImage: '/images/og-image.jpg',
-  twitterCard: 'summary_large_image'
-})
+  twitterCard: 'summary_large_image',
+});
 </script> 

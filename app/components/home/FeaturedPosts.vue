@@ -35,12 +35,12 @@
 </template>
 
 <script setup lang="ts">
-import type { BlogContent } from '~/types/blog'
-import ContentCard from '~/components/content/ContentCard.vue'
+import type { BlogContent } from '~/types/blog';
+import ContentCard from '~/components/content/ContentCard.vue';
 
 interface Props {
   featuredContents: BlogContent[]
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script> 

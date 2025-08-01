@@ -17,10 +17,10 @@
 
 <script setup lang="ts">
 // 导入组件
-import AboutSection from '~/components/home/AboutSection.vue'
+import AboutSection from '~/components/home/AboutSection.vue';
 
 // 获取作者数据
-const { author } = useContent()
+const { author } = useContent();
 
 // SEO 设置
 useSeoMeta({
@@ -30,11 +30,11 @@ useSeoMeta({
   author: 'otakuhuang',
   ogTitle: '关于我 - otakuhuang',
   ogDescription: '了解关于 otakuhuang 的信息，包括技术栈、工作经验和联系方式。',
-  twitterCard: 'summary_large_image'
-})
+  twitterCard: 'summary_large_image',
+});
 
 // 页面配置
 definePageMeta({
-  title: '关于'
-})
+  title: '关于',
+});
 </script>
