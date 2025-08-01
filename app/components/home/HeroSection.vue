@@ -5,7 +5,7 @@
         <!-- Avatar and Name -->
         <div class="flex justify-center mb-8">
           <UAvatar
-            src="https://avatars.githubusercontent.com/u/61155101?v=4&size=64"
+            :src="config.author.avatar"
             alt="Otakuhuang"
             size="xl"
             class="ring-4 ring-white shadow-lg"
@@ -71,6 +71,8 @@
 
 <script setup lang="ts">
 import type { BlogStats } from '~/types/blog'
+
+const config = useAppConfig();
 
 interface Props {
   stats: BlogStats
