@@ -1,10 +1,10 @@
 # otakuhuang 内容站
 
-一个基于 **Nuxt 3**、**TypeScript** 和 **Nuxt UI** 的现代内容静态站点，支持内容模块化、组件化开发，所有内容以 Markdown 文件管理，适合个人博客、技术站点、知识库等场景。
+一个基于 **Nuxt 4**、**TypeScript** 和 **Nuxt UI** 的现代内容静态站点，支持内容模块化、组件化开发，所有内容以 Markdown 文件管理，适合个人博客、技术站点、知识库等场景。
 
 ## 🚀 技术栈
 
-- **框架**：Nuxt 3 (Vue 3 + Vite)
+- **框架**：Nuxt 4 (Vue 3 + Vite)
 - **语言**：TypeScript
 - **UI**：Nuxt UI + Tailwind CSS
 - **内容管理**：Markdown 文件（`public/content/`）
