@@ -2,13 +2,12 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Otakuhuang',
+      title: 'otakuhuang',
       htmlAttrs: {
         lang: 'zh-CN',
       },
     },
   },
-  compatibilityDate: '2025-07-15',
   modules: ['@nuxt/ui', '@nuxt/eslint'],
   css: ['@/assets/css/main.css'],
   devtools: { enabled: true }
