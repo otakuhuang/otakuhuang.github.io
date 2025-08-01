@@ -8,6 +8,7 @@ export default withNuxt(
       'quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: false }],
       'semi': ['error', 'always'],
       'comma-dangle': ['error', 'always-multiline'],
+      'indent': ['error', 2, { SwitchCase: 1 }],
     },
   },
 );

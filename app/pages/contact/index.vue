@@ -25,7 +25,10 @@
               <div class="space-y-6">
                 <div class="flex items-start">
                   <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full">
-                    <UIcon name="i-heroicons-envelope" class="w-6 h-6 text-blue-600" />
+                    <UIcon
+                      name="i-heroicons-envelope"
+                      class="w-6 h-6 text-blue-600" 
+                    />
                   </div>
                   <div class="ml-4">
                     <h3 class="text-lg font-medium text-gray-900">邮箱</h3>
@@ -35,7 +38,10 @@
                 
                 <div class="flex items-start">
                   <div class="flex-shrink-0 bg-blue-100 p-3 rounded-full">
-                    <UIcon name="i-heroicons-chat-bubble-left-right" class="w-6 h-6 text-blue-600" />
+                    <UIcon
+                      name="i-heroicons-chat-bubble-left-right"
+                      class="w-6 h-6 text-blue-600" 
+                    />
                   </div>
                   <div class="ml-4">
                     <h3 class="text-lg font-medium text-gray-900">社交媒体</h3>

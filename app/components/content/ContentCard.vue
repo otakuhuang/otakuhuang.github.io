@@ -1,7 +1,10 @@
 <template>
   <article class="bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300 overflow-hidden">
     <!-- Cover Image -->
-    <div v-if="content.coverImage" class="aspect-video overflow-hidden">
+    <div
+      v-if="content.coverImage"
+      class="aspect-video overflow-hidden"
+    >
       <img
         :src="content.coverImage"
         :alt="content.title"
@@ -42,11 +45,17 @@
       <div class="flex items-center justify-between text-sm text-gray-500">
         <div class="flex items-center space-x-4">
           <span class="flex items-center space-x-1">
-            <UIcon name="i-heroicons-calendar" class="w-4 h-4" />
+            <UIcon
+              name="i-heroicons-calendar"
+              class="w-4 h-4"
+            />
             <span>{{ formatDate(content.publishedAt) }}</span>
           </span>
           <span class="flex items-center space-x-1">
-            <UIcon name="i-heroicons-clock" class="w-4 h-4" />
+            <UIcon
+              name="i-heroicons-clock"
+              class="w-4 h-4" 
+            />
             <span>{{ content.readTime }} 分钟</span>
           </span>
         </div>
