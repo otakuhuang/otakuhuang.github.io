@@ -3,7 +3,11 @@
     <div class="container mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
-        <div class="flex items-center space-x-3">
+        <div 
+          class="flex items-center space-x-3" 
+          style="cursor: pointer;" 
+          @click="navigateTo('/')"
+        >
           <UAvatar
             src="/images/icon.png"
             alt="Otakuhuang"
