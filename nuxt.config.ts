@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@nuxt/ui', '@nuxt/eslint'],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/image'],
   css: ['@/assets/css/main.css'],
   devtools: { enabled: true },
 });
