@@ -23,7 +23,7 @@ export default defineAppConfig({
     ],
     social: {
       github: 'https://github.com/otakuhuang',
-      email: 'shyxiaopang@gamil.com',
+      email: 'shyxiaopang@gmail.com',
       twitter: '',
       linkedin: '',
     },
