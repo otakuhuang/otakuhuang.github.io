@@ -1,18 +1,21 @@
 <template>
-  <div v-if="content" class="py-16">
+  <div
+    v-if="content"
+    class="py-16"
+  >
     <div class="container mx-auto px-4 max-w-4xl">
       <!-- Article Header -->
       <header class="mb-12">
         <!-- Tags -->
         <div class="flex flex-wrap gap-2 mb-4">
-                  <UBadge
-          v-for="tag in content.tags"
-          :key="tag"
-          :label="tag"
-          color="primary"
-          variant="soft"
-          size="sm"
-        />
+          <UBadge
+            v-for="tag in content.tags"
+            :key="tag"
+            :label="tag"
+            color="primary"
+            variant="soft"
+            size="sm" 
+          />
         </div>
 
         <!-- Title -->
@@ -24,41 +27,53 @@
         <div class="flex items-center justify-between text-gray-600 mb-8">
           <div class="flex items-center space-x-4">
             <span class="flex items-center space-x-1">
-              <UIcon name="i-heroicons-calendar" class="w-4 h-4" />
+              <UIcon
+                name="i-heroicons-calendar"
+                class="w-4 h-4" 
+              />
               <span>{{ formatDate(content.publishedAt) }}</span>
             </span>
             <span class="flex items-center space-x-1">
-              <UIcon name="i-heroicons-clock" class="w-4 h-4" />
-                          <span>{{ content.readTime }} 分钟</span>
-          </span>
-          <span class="flex items-center space-x-1">
-            <UIcon name="i-heroicons-user" class="w-4 h-4" />
-            <span>{{ content.author }}</span>
-          </span>
+              <UIcon
+                name="i-heroicons-clock"
+                class="w-4 h-4" 
+              />
+              <span>{{ content.readTime }} 分钟</span>
+            </span>
+            <span class="flex items-center space-x-1">
+              <UIcon
+                name="i-heroicons-user"
+                class="w-4 h-4" 
+              />
+              <span>{{ content.author }}</span>
+            </span>
+          </div>
+
+          <!-- Featured Badge -->
+          <UBadge
+            v-if="content.featured"
+            label="精选"
+            color="warning"
+            variant="soft" 
+          />
         </div>
 
-        <!-- Featured Badge -->
-        <UBadge
-          v-if="content.featured"
-          label="精选"
-          color="warning"
-          variant="soft"
-        />
-      </div>
-
-      <!-- Cover Image -->
-      <div v-if="content.coverImage" class="mb-8">
-        <img
-          :src="content.coverImage"
-          :alt="content.title"
-          class="w-full h-64 object-cover rounded-lg"
+        <!-- Cover Image -->
+        <div
+          v-if="content.coverImage"
+          class="mb-8"
         >
-      </div>
+          <img
+            :src="content.coverImage"
+            :alt="content.title"
+            class="w-full h-64 object-cover rounded-lg"
+          >
+        </div>
 
-      <!-- Excerpt -->
-      <p class="text-xl text-gray-600 leading-relaxed">
-        {{ content.excerpt }}
-      </p>
+        <!-- Excerpt -->
+        <p class="text-xl text-gray-600 leading-relaxed">
+          {{ content.excerpt }}
+        </p>
       </header>
 
       <!-- Article Content -->
@@ -73,42 +88,7 @@
       </article>
 
       <!-- Article Footer -->
-      <footer class="mt-12 pt-8 border-t border-gray-200">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-4">
-            <UAvatar
-              src="/images/avatar.jpg"
-              alt="otakuhuang"
-              size="sm"
-            />
-            <div>
-              <p class="font-medium text-gray-900">otakuhuang</p>
-              <p class="text-sm text-gray-600">前端开发工程师</p>
-            </div>
-          </div>
-
-          <div class="flex space-x-4">
-            <UButton
-              icon="i-simple-icons-github"
-              color="primary"
-              variant="ghost"
-              size="sm"
-              to="https://github.com/otakuhuang"
-              target="_blank"
-              aria-label="GitHub"
-            />
-            <UButton
-              icon="i-simple-icons-twitter"
-              color="primary"
-              variant="ghost"
-              size="sm"
-              to="https://twitter.com/otakuhuang"
-              target="_blank"
-              aria-label="Twitter"
-            />
-          </div>
-        </div>
-      </footer>
+      <ArticleFooter />
 
       <!-- Navigation -->
       <nav class="mt-12 pt-8 border-t border-gray-200">
@@ -118,10 +98,13 @@
             :to="`/content/${prevContent.id}`"
             class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
           >
-            <UIcon name="i-heroicons-arrow-left" class="w-4 h-4" />
+            <UIcon
+              name="i-heroicons-arrow-left"
+              class="w-4 h-4" 
+            />
             <span>{{ prevContent.title }}</span>
           </NuxtLink>
-          <div v-else/>
+          <div v-else />
 
           <NuxtLink
             v-if="nextContent"
@@ -129,16 +112,22 @@
             class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
           >
             <span>{{ nextContent.title }}</span>
-            <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" />
+            <UIcon
+              name="i-heroicons-arrow-right"
+              class="w-4 h-4" 
+            />
           </NuxtLink>
-          <div v-else/>
+          <div v-else />
         </div>
       </nav>
     </div>
   </div>
 
   <!-- 404 Page -->
-  <div v-else class="py-16">
+  <div
+    v-else
+    class="py-16"
+  >
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold text-gray-900 mb-4">内容未找到</h1>
       <p class="text-gray-600 mb-8">抱歉，您访问的内容不存在。</p>
@@ -154,7 +143,7 @@
 </template>
 
 <script setup lang="ts">
-// import type { BlogPost } from '~/types/blog'
+import ArticleFooter from './components/ArticleFooter.vue';
 
 // 获取路由参数
 const route = useRoute();
@@ -190,4 +179,4 @@ useSeoMeta({
   ogDescription: content ? content.excerpt : '抱歉，您访问的内容不存在。',
   ogImage: content?.coverImage || '/images/og-image.jpg',
 });
-</script> 
+</script>
