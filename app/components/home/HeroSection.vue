@@ -21,18 +21,6 @@
           {{ site.description }}
         </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <UButton
-            to="/content"
-            color="primary"
-            size="lg"
-            class="font-medium"
-          >
-            浏览文章
-          </UButton>
-        </div>
-
         <!-- Stats -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="text-center">
