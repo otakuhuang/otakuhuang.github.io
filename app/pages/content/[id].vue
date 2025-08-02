@@ -77,12 +77,11 @@
       </header>
 
       <!-- Article Content -->
-      <article class="prose prose-lg max-w-none">
+      <article v-if="content" class="prose prose-lg max-w-none">
         <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
           <!-- 这里将来会显示 markdown 渲染的内容 -->
           <div class="text-gray-700 leading-relaxed">
-            <p>{{ content.content }}</p>
-            <p class="mt-4">这是文章的完整内容。在实际应用中，这里会显示从 markdown 文件解析并渲染的内容。</p>
+            <ContentRenderer :value="content" />
           </div>
         </div>
       </article>
@@ -149,11 +148,11 @@ import ArticleFooter from './components/ArticleFooter.vue';
 const route = useRoute();
 const contentId = route.params.id as string;
 
+// 获取当前文章和所有文章
+const { data: content } = await useAsyncData(() => queryCollection('content').where('stem', '=', contentId).first());
+
 // 获取内容数据
 const { allContents } = useContent();
-
-// 获取当前文章和所有文章
-const content = allContents.find(c => c.id === contentId);
 
 // 计算上一篇和下一篇文章
 const currentIndex = allContents.findIndex(c => c.id === contentId);
@@ -171,12 +170,12 @@ const formatDate = (dateString: string) => {
 
 // SEO 设置
 useSeoMeta({
-  title: content ? `${content.title} - otakuhuang` : '内容未找到 - otakuhuang',
-  description: content ? content.excerpt : '抱歉，您访问的内容不存在。',
-  keywords: content ? content.tags.join(', ') : '内容',
+  title: content ? `${content.value?.title} - otakuhuang` : '内容未找到 - otakuhuang',
+  description: content ? content.value?.excerpt : '抱歉，您访问的内容不存在。',
+  keywords: content ? content.value?.tags.join(', ') : '内容',
   author: 'otakuhuang',
-  ogTitle: content ? content.title : '内容未找到',
-  ogDescription: content ? content.excerpt : '抱歉，您访问的内容不存在。',
-  ogImage: content?.coverImage || '/images/og-image.jpg',
+  ogTitle: content ? content.value?.title : '内容未找到',
+  ogDescription: content ? content.value?.excerpt : '抱歉，您访问的内容不存在。',
+  ogImage: content.value?.coverImage || '/images/og-image.jpg',
 });
 </script>
