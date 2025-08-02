@@ -94,7 +94,7 @@
         <div class="flex items-center justify-between">
           <NuxtLink
             v-if="prevContent"
-            :to="`/content/${prevContent.id}`"
+            :to="`/${prevContent.id}`"
             class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
           >
             <UIcon
@@ -107,7 +107,7 @@
 
           <NuxtLink
             v-if="nextContent"
-            :to="`/content/${nextContent.id}`"
+            :to="`/${nextContent.id}`"
             class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
           >
             <span>{{ nextContent.title }}</span>
@@ -146,19 +146,14 @@ import ArticleFooter from './components/ArticleFooter.vue';
 
 // 获取路由参数
 const route = useRoute();
-const contentId = route.params.id as string;
 
 // 获取当前文章和所有文章
 const id = route.path.slice(1);
 const { data: content } = await useAsyncData(route.path, () => queryCollection('content').where('id', '=', id).first());
 
-// 获取内容数据
-const { allContents } = useContent();
-
 // 计算上一篇和下一篇文章
-const currentIndex = allContents.findIndex(c => c.id === contentId);
-const prevContent = currentIndex > 0 ? allContents[currentIndex - 1] : null;
-const nextContent = currentIndex < allContents.length - 1 ? allContents[currentIndex + 1] : null;
+const { data: prevContent } = await useAsyncData(() => queryCollection('content').select('id', 'title', 'publishedAt').where('publishedAt', '>', content.value?.publishedAt).order('publishedAt', 'ASC').limit(1).first());
+const { data: nextContent } = await useAsyncData(() => queryCollection('content').select('id', 'title', 'publishedAt').where('publishedAt', '<', content.value?.publishedAt).order('publishedAt', 'DESC').limit(1).first());
 
 // 格式化日期
 const formatDate = (dateString: string) => {
