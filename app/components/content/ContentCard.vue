@@ -29,7 +29,7 @@
       <!-- Title -->
       <h3 class="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
         <NuxtLink
-          :to="`/content/${content.id}`"
+          :to="`${content.id}`"
           class="hover:text-blue-600 transition-colors"
         >
           {{ content.title }}
