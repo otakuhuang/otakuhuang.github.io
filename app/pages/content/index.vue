@@ -12,7 +12,7 @@
       <!-- Contents Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ContentCard
-          v-for="content in allContents"
+          v-for="content in contents"
           :key="content.id"
           :content="content"
         />
@@ -44,7 +44,9 @@
 import ContentCard from '~/components/content/ContentCard.vue';
 
 // 获取静态内容数据
-const { allContents, stats } = useContent();
+const { stats } = useContent();
+
+const { data: contents } = await useAsyncData(() => queryCollection('content').all());
 
 // SEO 设置
 useSeoMeta({

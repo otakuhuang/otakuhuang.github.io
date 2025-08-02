@@ -74,10 +74,10 @@
 </template>
 
 <script setup lang="ts">
-import type { BlogContent } from '~/types/blog';
+import type { ContentCollectionItem } from '@nuxt/content';
 
 interface Props {
-  content: BlogContent
+  content: ContentCollectionItem
 }
 
 defineProps<Props>();
