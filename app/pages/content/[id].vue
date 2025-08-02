@@ -149,7 +149,8 @@ const route = useRoute();
 const contentId = route.params.id as string;
 
 // 获取当前文章和所有文章
-const { data: content } = await useAsyncData(() => queryCollection('content').where('stem', '=', contentId).first());
+const id = route.path.slice(1);
+const { data: content } = await useAsyncData(route.path, () => queryCollection('content').where('id', '=', id).first());
 
 // 获取内容数据
 const { allContents } = useContent();
