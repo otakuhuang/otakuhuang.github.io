@@ -20,7 +20,7 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
+        <nav class="hidden md:flex items-center space-x-4">
           <NuxtLink
             to="/"
             class="text-gray-700 hover:text-blue-600 transition-colors"
@@ -34,20 +34,6 @@
             active-class="text-blue-600 font-medium"
           >
             文章
-          </NuxtLink>
-          <NuxtLink
-            to="/about"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
-            active-class="text-blue-600 font-medium"
-          >
-            关于
-          </NuxtLink>
-          <NuxtLink
-            to="/contact"
-            class="text-gray-700 hover:text-blue-600 transition-colors"
-            active-class="text-blue-600 font-medium"
-          >
-            联系
           </NuxtLink>
         </nav>
 
