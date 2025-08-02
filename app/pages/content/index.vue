@@ -46,7 +46,7 @@ import ContentCard from '~/components/content/ContentCard.vue';
 // 获取静态内容数据
 const { stats } = useContent();
 
-const { data: contents } = await useAsyncData(() => queryCollection('content').all());
+const { data: contents } = await useAsyncData(() => queryCollection('content').order('publishedAt', 'DESC').all());
 
 // SEO 设置
 useSeoMeta({
