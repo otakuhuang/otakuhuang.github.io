@@ -15,7 +15,7 @@ import FeaturedPosts from '~/components/home/FeaturedPosts.vue';
 
 // 获取内容数据
 const { stats } = useContent();
-const { data: featuredContents } = await useAsyncData(() => queryCollection('content').where('featured', '=', true).all());
+const { data: featuredContents } = await useAsyncData(() => queryCollection('content').where('featured', '=', true).order('publishedAt', 'DESC').all());
 
 // SEO 设置
 useSeoMeta({
