@@ -14,7 +14,8 @@ import HeroSection from '~/components/home/HeroSection.vue';
 import FeaturedPosts from '~/components/home/FeaturedPosts.vue';
 
 // 获取内容数据
-const { featuredContents, stats } = useContent();
+const { stats } = useContent();
+const { data: featuredContents } = await useAsyncData(() => queryCollection('content').where('featured', '=', true).all());
 
 // SEO 设置
 useSeoMeta({

@@ -35,11 +35,11 @@
 </template>
 
 <script setup lang="ts">
-import type { BlogContent } from '~/types/blog';
 import ContentCard from '~/components/content/ContentCard.vue';
+import type { ContentCollectionItem } from '@nuxt/content';
 
 interface Props {
-  featuredContents: BlogContent[]
+  featuredContents: ContentCollectionItem[]
 }
 
 defineProps<Props>();
