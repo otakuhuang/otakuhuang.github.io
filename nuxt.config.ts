@@ -8,7 +8,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/image', '@nuxt/content'],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/image', '@nuxt/content', 'nuxt-gtag'],
   css: ['@/assets/css/main.css'],
+  gtag: {
+    id: 'G-3N2NVYHG2L',
+  },
   devtools: { enabled: true },
 });
