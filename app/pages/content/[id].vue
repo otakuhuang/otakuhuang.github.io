@@ -89,36 +89,6 @@
       <!-- Article Footer -->
       <ArticleFooter />
 
-      <!-- Navigation -->
-      <nav class="mt-12 pt-8 border-t border-gray-200">
-        <div class="flex items-center justify-between">
-          <NuxtLink
-            v-if="prevContent"
-            :to="`/${prevContent.id}`"
-            class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            <UIcon
-              name="i-heroicons-arrow-left"
-              class="w-4 h-4" 
-            />
-            <span>{{ prevContent.title }}</span>
-          </NuxtLink>
-          <div v-else />
-
-          <NuxtLink
-            v-if="nextContent"
-            :to="`/${nextContent.id}`"
-            class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            <span>{{ nextContent.title }}</span>
-            <UIcon
-              name="i-heroicons-arrow-right"
-              class="w-4 h-4" 
-            />
-          </NuxtLink>
-          <div v-else />
-        </div>
-      </nav>
     </div>
   </div>
 
@@ -150,10 +120,6 @@ const route = useRoute();
 // 获取当前文章和所有文章
 const id = route.path.slice(1);
 const { data: content } = await useAsyncData(route.path, () => queryCollection('content').where('id', '=', id).first());
-
-// 计算上一篇和下一篇文章
-const { data: prevContent } = await useAsyncData(() => queryCollection('content').select('id', 'title', 'publishedAt').where('publishedAt', '>', content.value?.publishedAt).order('publishedAt', 'ASC').limit(1).first());
-const { data: nextContent } = await useAsyncData(() => queryCollection('content').select('id', 'title', 'publishedAt').where('publishedAt', '<', content.value?.publishedAt).order('publishedAt', 'DESC').limit(1).first());
 
 // 格式化日期
 const formatDate = (dateString: string) => {
