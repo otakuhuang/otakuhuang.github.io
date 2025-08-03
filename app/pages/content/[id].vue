@@ -86,9 +86,6 @@
         </div>
       </article>
 
-      <!-- Article Footer -->
-      <ArticleFooter />
-
     </div>
   </div>
 
@@ -112,8 +109,6 @@
 </template>
 
 <script setup lang="ts">
-import ArticleFooter from './components/ArticleFooter.vue';
-
 // 获取路由参数
 const route = useRoute();
 
