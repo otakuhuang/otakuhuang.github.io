@@ -19,6 +19,20 @@
           </div>
         </div>
 
+        <div class="hidden md:block flex-1 mx-8" hidden>
+          <UInput
+            v-model="query"
+            placeholder="搜索..."
+            icon="mdi-magnify"
+          />
+          <ul>
+            <li v-for="link in result" :key="link.id" class="mt-2">
+              <NuxtLink :to="`/content${link.id}`">{{ link.title }}</NuxtLink>
+              <p class="text-gray-600 text-xs">{{ link.body }}</p>
+            </li>
+          </ul>
+        </div>
+
         <!-- Navigation -->
         <nav class="hidden md:flex items-center space-x-4">
           <NuxtLink
@@ -92,5 +106,25 @@
 </template>
 
 <script setup lang="ts">
+import MiniSearch from 'minisearch';
+
 const isMobileMenuOpen = ref(false);
+
+const query = ref('');
+const { data } = await useAsyncData('content', () => queryCollectionSearchSections('content'));
+
+const miniSearch = new MiniSearch({
+  fields: ['title', 'body'],
+  storeFields: ['title', 'body'],
+  searchOptions: {
+    prefix: true,
+    fuzzy: 0.2,
+    boost: {
+      title: 2,
+    },
+  },
+});
+
+miniSearch.addAll(toValue(data.value));
+const result = computed(() => miniSearch.search(toValue(query)));
 </script> 
