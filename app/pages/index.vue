@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <HeroSection :stats="stats" />
+    <HeroSection />
 
     <!-- Featured Contents -->
     <FeaturedPosts :featured-contents="featuredContents" />
@@ -14,7 +14,6 @@ import HeroSection from '~/components/home/HeroSection.vue';
 import FeaturedPosts from '~/components/home/FeaturedPosts.vue';
 
 // 获取内容数据
-const { stats } = useContent();
 const { data: featuredContents } = await useAsyncData(() => queryCollection('content').where('featured', '=', true).order('publishedAt', 'DESC').all());
 
 // SEO 设置

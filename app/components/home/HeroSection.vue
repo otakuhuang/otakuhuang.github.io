@@ -25,19 +25,19 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="text-center">
             <div class="text-3xl font-bold text-blue-600 mb-2">
-              {{ stats.totalContents }}
+              {{ totalContents }}
             </div>
             <div class="text-gray-600">内容总数</div>
           </div>
           <div class="text-center">
             <div class="text-3xl font-bold text-blue-600 mb-2">
-              {{ stats.totalViews }}
+              0<!-- {{ stats.totalViews }} -->
             </div>
             <div class="text-gray-600">总浏览量</div>
           </div>
           <div class="text-center">
             <div class="text-3xl font-bold text-blue-600 mb-2">
-              {{ stats.totalLikes }}
+              0<!-- {{ stats.totalLikes }} -->
             </div>
             <div class="text-gray-600">获得点赞</div>
           </div>
@@ -48,13 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BlogStats } from '~/types/blog';
-
 const { site, author } = useAppConfig();
 
-interface Props {
-  stats: BlogStats
-}
-
-defineProps<Props>();
+const { data: totalContents } = await useAsyncData(() => queryCollection('content').orWhere(query => query.where('draft', 'IS NULL').where('draft', '<>', false)).count());
 </script> 
