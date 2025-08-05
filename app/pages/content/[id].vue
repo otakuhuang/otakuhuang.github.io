@@ -86,6 +86,11 @@
         </div>
       </article>
 
+      <!-- comments -->
+      <div class="comments">
+        <Twikoo />
+      </div>
+
     </div>
   </div>
 
@@ -109,6 +114,8 @@
 </template>
 
 <script setup lang="ts">
+import Twikoo from './components/Twikoo.vue';
+
 // 获取路由参数
 const route = useRoute();
 

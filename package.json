@@ -19,6 +19,7 @@
     "minisearch": "^7.1.2",
     "nuxt": "^4.0.1",
     "nuxt-gtag": "3.0.3",
+    "twikoo": "^1.6.44",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },
