@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">精选内容</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">精选文章</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
           这些是我最受欢迎和最有价值的内容, 涵盖了前端开发、TypeScript、Vue.js 等热门话题。
         </p>
